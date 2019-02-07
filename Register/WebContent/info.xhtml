@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title>Add User</title>
+</h:head>
+
+<h:body>
+	<h:panelGrid columns="2">
+		<f:facet name="header">
+			Add User
+		</f:facet>
+		
+		<h:outputText value="Name:" />
+		<h:outputText value="#{register.name}" />
+		
+		<h:outputText value="E-mail" />
+		<h:outputText value="#{register.email}" />
+		
+		<h:outputText value="Password:" />
+		<h:outputText value="#{register.pass1}" />
+		
+		<h:outputText value="Password Confirmation:" />
+		<h:outputText value="#{register.pass2}" />
+		
+		<h:outputText value="Gender:" />
+		<h:outputText value="Male" rendered="#{register.gender == 'M'}" />
+		<h:outputText value="Female" rendered="#{register.gender == 'F'}" />
+		
+		<h:outputText value="Do you want to receive emails?" />
+		<h:outputText value="Yes" rendered="#{register.receiveEmails}" />
+		<h:outputText value="No" rendered="#{!register.receiveEmails}" />
+		
+		<h:outputText value="Comments:" />
+		<h:outputText value="#{register.comments}" />
+		
+		<h:outputText value="Programming languages:" />
+		<h:outputText value="#{register.languagesAsString}" />
+	</h:panelGrid>
+</h:body>
+</html>
